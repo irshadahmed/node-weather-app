@@ -14,6 +14,7 @@ console.log(__filename);
 console.log(path.join(__dirname, '../public'));
 
 const app = express();
+const port = process.env.PORT || 3000;
 
 // This acts as default root in case of mismatch
 // The root path is always matched to public folder which serves index.html
@@ -85,6 +86,6 @@ app.get(`/products`, (req, res) => {
   })
 });
 
-app.listen(3000, () => {
+app.listen(port, () => {
   console.log('Server listening on port 3000');
 });
